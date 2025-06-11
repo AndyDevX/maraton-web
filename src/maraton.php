@@ -64,7 +64,7 @@ echo '</pre>';*/
             echo '<button type="submit" name="seleccionar_valor" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Iniciar</button>';
             echo '<button type="submit" name="reiniciar_seleccion" style="background-color: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Reiniciar selección</button>';
             echo '</form>';
-            echo '<form method="GET" action="inicio_maraton.php">';
+            echo '<form method="GET" action="index.php">';
             echo '<button type="submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Volver al menú</button>';
             echo '</form>';
             exit;
@@ -164,7 +164,7 @@ echo '</pre>';*/
                 echo '<form method="POST" action="" style="display:inline-block;">';
                 echo '<button type="submit" name="reiniciar_seleccion" style="background-color: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Reiniciar selección</button>';
                 echo '</form>';
-                echo '<form method="GET" action="inicio_maraton.php" style="display:inline-block;">';
+                echo '<form method="GET" action="index.php" style="display:inline-block;">';
                 echo '<button type="submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Volver al menú</button>';
                 echo '</form>';
                 echo '</div>';
