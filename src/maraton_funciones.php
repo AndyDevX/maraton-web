@@ -1,4 +1,3 @@
-
 <?php
 
 // Incluir el archivo de conexión
