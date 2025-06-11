@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     ports:
-      - "80:80"                     # expone Apache en el puerto 80 del host
+      - "81:80"                     # expone Apache en el puerto 80 del host
     environment:
       # Variables que use tu código PHP para conectarse a la BD
       DB_HOST: db
