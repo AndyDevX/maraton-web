@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mi-maraton-web:latest   # nombre de imagen local; Portainer la construirá
+    depends_on:
+      - db
+    ports:
+      - "80:80"                     # expone Apache en el puerto 80 del host
+    environment:
+      # Variables que use tu código PHP para conectarse a la BD
+      DB_HOST: db
+      DB_NAME: maraton_db
+      DB_USER: maraton_user
+      DB_PASS: maraton_pass
+    restart: always
+    networks:
+      - webnet
+
+  db:
+    image: mysql:8.0
+    container_name: mi-maraton-db
+    restart: always
+    environment:
+      # Ajusta estas credenciales y nombre de BD según convenga
+      MYSQL_ROOT_PASSWORD: root_pass_seguro
+      MYSQL_DATABASE: maraton_db
+      MYSQL_USER: maraton_user
+      MYSQL_PASSWORD: maraton_pass
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - webnet
+
+volumes:
+  dbdata:
+
+networks:
+  webnet:
+    driver: bridge
