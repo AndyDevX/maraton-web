@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mi-maraton-web:latest   # nombre de imagen local; Portainer la construirá
+    image: maraton-web:latest   # nombre de imagen local; Portainer la construirá
     depends_on:
       - db
     ports:
